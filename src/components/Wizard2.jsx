@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom'
+import {connect} from 'react-redux'
+import { updateImg } from './../ducks/reducer';
 
 class Wizard2 extends Component {
     constructor(props) {
@@ -7,9 +9,15 @@ class Wizard2 extends Component {
         this.state= {
             img: ''
         }
+        this.img = this.img.bind(this)
     }
 
-    img = (img) => {
+    componentDidMount() {
+        this.setState({ img: this.props.img})
+    }
+
+
+    img(img) {
         this.setState({
             img: img
         })
@@ -30,17 +38,29 @@ class Wizard2 extends Component {
             <div className="wizardInput">
                 <input type="text" placeholder='Image'
                     onChange={e => this.img(e.target.value)}
+                    value={this.state.img}
                 />
             </div>
             <Link to='/wizard/1'>
-                <button className='wizNav'>Previous Step</button>
+                <button 
+                onClick={() => this.props.updateImg(this.state.img)}
+                className='wizNav'>Previous Step</button>
             </Link>
             <Link to='/wizard/3'>
-                <button className='wizNav'>Next Step</button>
+                <button
+                onClick={() => this.props.updateImg(this.state.img)}
+                className='wizNav'>Next Step</button>
             </Link>
         </div>
         );
     }
 }
 
-export default Wizard2;
+function mapStateToProps(state) {
+    return {
+      img: state.img
+    }
+  }
+  
+  export default connect(mapStateToProps, { updateImg })(Wizard2);
+  
