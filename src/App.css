@@ -1,22 +1,87 @@
 .App {
   text-align: center;
+  background-color: #afd4c0;
+  height: 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+
+.wizardInput {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+ 
 }
 
-.App-link {
-  color: #09d3ac;
+input {
+  width: 300px;
+  height: 20px;
+  margin: 10px;
 }
+
+.header {
+  background-color: #519872;
+  height: 80px;
+  display: flex;
+  align-items: center;
+}
+
+.header h1 {
+  color: white;
+  margin-top: none !important;
+  margin-left: 200px;
+}
+
+.wizard1 {
+  width: 700px;
+  height: 100vh;
+  background-color: #e5f4ec;
+  margin: auto;
+}
+
+.title1 {
+  margin:10px !important;
+}
+
+img {
+  height: 140px;
+  width: auto;
+  margin: 10px;
+}
+
+.oneHouse {
+  width: 680px;
+  height: 180;
+  background-color: #dedede;
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+}
+
+p {
+  margin: 8px;
+  text-align: left;
+}
+
+.line {
+  border: 1px solid black;
+  width:660px;
+  margin-left: 20px;
+}
+.titleCont {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.delete {
+  height: 20px;
+  border: none;
+  font-size: 1rem;
+  margin-top: 5px;
+}
+
+
+
+
