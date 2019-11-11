@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
 // import axios from 'axios'
 import {connect} from 'react-redux'
-import {updateLocation} from '../ducks/reducer'
+import {updateLocation, clear} from '../ducks/reducer'
 
 class Wizard1 extends Component {
     constructor(props) {
@@ -82,7 +82,9 @@ class Wizard1 extends Component {
                         Add New Listing
                     </h1>
                     <Link to='/'>
-                        <button>Cancel</button>
+                        <button 
+                        className ='cancel'
+                        onClick={()=> this.props.clear()}>Cancel</button>
                     </Link>
                 </div>
                 {/* <div className='line'/> */}
@@ -111,7 +113,7 @@ class Wizard1 extends Component {
                 <Link to='/wizard/2'>
                     <button 
                     onClick={() => this.props.updateLocation(this.state)}
-                    className='next'>Next Step</button>
+                    className='wizNav'>Next Step</button>
                 </Link>
                 {/* <button 
                 onClick={()=>this.submit()}
@@ -126,4 +128,4 @@ function mapStateToProps(reduxState) {
     return { name, address, city, state, zip }
   }
   
-  export default connect(mapStateToProps, { updateLocation })(Wizard1);
+  export default connect(mapStateToProps, { updateLocation, clear })(Wizard1);

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
-import { updateImg } from './../ducks/reducer';
+import { updateImg, clear } from './../ducks/reducer';
 
 class Wizard2 extends Component {
     constructor(props) {
@@ -31,7 +31,9 @@ class Wizard2 extends Component {
                     Add New Listing
                 </h1>
                 <Link to='/'>
-                    <button>Cancel</button>
+                    <button 
+                    className ='cancel'
+                    onClick={()=> this.props.clear()} >Cancel</button>
                 </Link>
             </div>
             {/* <div className='line'/> */}
@@ -44,7 +46,7 @@ class Wizard2 extends Component {
             <Link to='/wizard/1'>
                 <button 
                 onClick={() => this.props.updateImg(this.state.img)}
-                className='wizNav'>Previous Step</button>
+                className='wizNav1'>Previous Step</button>
             </Link>
             <Link to='/wizard/3'>
                 <button
@@ -62,5 +64,5 @@ function mapStateToProps(state) {
     }
   }
   
-  export default connect(mapStateToProps, { updateImg })(Wizard2);
+  export default connect(mapStateToProps, { updateImg, clear })(Wizard2);
   

@@ -45,18 +45,20 @@ class Dashboard extends Component {
         ))
 
         return (
-            <div className='wizard1'>
-                <div className="titleCont">
-                    <h1 className='title1'>
-                        Dashboard 
-                    </h1>
-                    <Link to='/wizard/1'>
-                        <button>Add New Property</button>
-                    </Link>
-                </div>
-                <div className='line'/>
-                <h3>Home Listings</h3>
-                {allHouses}
+            <div className="body2">
+                {/* <div className='wizard1'> */}
+                    <div className="titleCont">
+                        <h1 className='title1'>
+                            Dashboard 
+                        </h1>
+                        <Link to='/wizard/1'>
+                            <button className='addProperty' >Add New Property</button>
+                        </Link>
+                    </div>
+                    <div className='line'/>
+                    <h3>Home Listings</h3>
+                    {allHouses}
+                {/* </div> */}
             </div>
         );
     }

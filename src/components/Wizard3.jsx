@@ -78,7 +78,8 @@ class Wizard3 extends Component {
                     Add New Listing
                 </h1>
                 <Link to='/'>
-                    <button>Cancel</button>
+                    <button
+                    className ='cancel'>Cancel</button>
                 </Link>
             </div>
             {/* <div className='line'/> */}
@@ -91,12 +92,12 @@ class Wizard3 extends Component {
             <Link to='/wizard/2'>
                 <button 
                     onClick={_ => this.props.updateMoney(this.state)}
-                    className='wizNav'>Previous Step</button>
+                    className='wizNav1'>Previous Step</button>
             </Link>
             <Link to='/'>
                 <button 
                 onClick={this.complete}
-                className='complete'>Complete</button>
+                className='addProperty1'>Complete</button>
             </Link>
         </div>
         );
